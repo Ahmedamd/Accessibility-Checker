@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// Endpoint to check accessibility of a given URL
+// Endpoint to check accessibility given URL
 app.post('/api/check-url', async (req, res) => {
     const { url } = req.body;
     console.log(`Received URL: ${url}`);
@@ -18,7 +18,7 @@ app.post('/api/check-url', async (req, res) => {
             return res.status(400).json({ error: 'URL is required.' });
         }
 
-        // Run the pa11y accessibility check on the provided URL
+        
         const results = await pa11y(url);
         res.status(200).json({ message: 'URL is valid!', results });
     } catch (error) {

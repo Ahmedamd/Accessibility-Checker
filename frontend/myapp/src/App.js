@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function App() {
-    // State to store URL input, accessibility results, document title, and error messages
+    // State to store URL input -accessibility results document title, and error messages
     const [url, setUrl] = useState('');
     const [results, setResults] = useState({ issues: [], documentTitle: '', pageUrl: '' });
     const [error, setError] = useState('');
@@ -11,16 +11,16 @@ function App() {
     // Function to handle the accessibility check
     const checkAccessibility = async () => {
         try {
-            setError(''); // Clear any previous error
+            setError(''); 
             const response = await axios.post('http://localhost:5100/api/check-url', { url });
             
-            // Set the results state with the response data structure
+   
             setResults({
                 issues: response.data.results.issues || [],
                 documentTitle: response.data.results.documentTitle || 'Untitled Page',
                 pageUrl: response.data.results.pageUrl || 'N/A',
             });
-            setShowFullReport(false); // Reset the full report display on new check
+            setShowFullReport(false); 
         } catch (err) {
             console.error('Request failed:', err.message);
             setError('Failed to check the URL. Please ensure the URL is correct and try again.');
@@ -36,19 +36,24 @@ function App() {
             setError('Please enter a valid URL.');
         }
     };
+    
 
     return (
         <div>
             <h1>Accessibility Checker</h1>
+            <h3>Enter URL to check for accessibility</h3> 
+            <h3>Powered by </h3>
             <form onSubmit={handleSubmit}>
+           
                 <label>
-                    Enter URL to check
+                    
                     <input
                         type="text"
                         value={url}
                         onChange={(e) => setUrl(e.target.value)}
-                        placeholder="ex: https://github.com/"
-                        style={{ margin: '10px', padding: '8px', width: '300px' }}
+                        placeholder=" 🌐 Enter Url"
+                        
+                        
                     />
                 </label>
                 <button type="submit" style={{ padding: '8px 16px', cursor: 'pointer' }}>
@@ -56,18 +61,19 @@ function App() {
                 </button>
             </form>
 
-            {error && <p style={{ color: 'red' }}>{error}</p>}
+            {error && <p className="error">{error}</p>} 
 
             {Array.isArray(results.issues) && results.issues.length > 0 ? (
-                <div style={{ marginTop: '20px' }}>
-                    <h2 className='title'>Accessibility Report for: {results.documentTitle}</h2>
-                    <p><a href={results.pageUrl} target="_blank" rel="noopener noreferrer">{results.pageUrl}</a></p>
-                    <p className='total-issues'>Total Issues: {results.issues.length}</p>
+                <div className='cont' style={{ marginTop: '20px' }}>
+                    <div>
+                    <h2 className='title'>Accessibility Report for: <a href={results.pageUrl} target="_blank" rel="noopener noreferrer"> {results.documentTitle} </a> </h2>
+                
+                    <p className='total-issues'>Total Issue: {results.issues.length}</p>
                     {results.issues.slice(0, showFullReport ? results.issues.length : 15).map((issue, index) => (
                         <div className='issue' key={index} style={{
                             
                         }}>
-                            <h3>Issue {index + 1}</h3>
+                            <h3 style={{textAlign: 'left'}}>Issue {index + 1}</h3>
                             <p><strong>Code:</strong> {issue.code}</p>
                             <p><strong>Message:</strong> {issue.message}</p>
                             {issue.context && (
@@ -101,11 +107,14 @@ function App() {
                             Show Full Report
                         </button>
                     )}
+                    </div>
+                 
                 </div>
             ) : (
-                <p>No accessibility issues found or data format is incorrect.</p>
+                <p></p>
             )}
         </div>
+        // end of rendering
     );
 }
 
