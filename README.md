@@ -2,6 +2,8 @@
 
 An easy-to-use tool for evaluating web page accessibility compliance based on WCAG standards. Built with Gatsby, this checker analyzes pages for common accessibility issues like contrast, ARIA labels, and navigational structure.
 
+![A11y ](https://github.com/user-attachments/assets/c362c43e-2f29-467f-a0eb-d03d6cd1df82)
+
 ## Features
 
 - **WCAG Compliance**: Checks for ARIA labels, semantic HTML structure,and other relavant issues.
@@ -16,13 +18,13 @@ An easy-to-use tool for evaluating web page accessibility compliance based on WC
 
 ## Installation
 
-## Installation
+
 
 Follow these steps to set up the project:
 
 ```bash
 # Step 1: Clone the repository
-git clone https://github.com/username/Accessibility-Checker.git
+git clone https://github.com/ahmedamd/Accessibility-Checker.git
 
 # Step 2: Navigate to the project folder
 cd Accessibility-Checker
@@ -35,5 +37,11 @@ npm install pay11
 
 # Step 5: Run the development server
 npm start
+
+```
+
+## License
+
+This project is licensed under the MIT License.
 
 
