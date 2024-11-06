@@ -16,6 +16,24 @@ An easy-to-use tool for evaluating web page accessibility compliance based on WC
 
 ## Installation
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/Ahmedamd/Accessibility-Checker.git
+## Installation
+
+Follow these steps to set up the project:
+
+```bash
+# Step 1: Clone the repository
+git clone https://github.com/username/Accessibility-Checker.git
+
+# Step 2: Navigate to the project folder
+cd Accessibility-Checker
+
+# Step 3: Install dependencies
+npm install
+
+# Step 4: Install Pay11 (required for accessibility checks)
+npm install pay11
+
+# Step 5: Run the development server
+npm start
+
+
