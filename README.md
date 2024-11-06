@@ -1,6 +1,6 @@
 # Accessibility Checker
 
-An easy-to-use tool for evaluating web page accessibility compliance based on WCAG standards. Built with Gatsby, this checker analyzes pages for common accessibility issues like contrast, ARIA labels, and navigational structure.
+An accessibility reporting app that generates comprehensive reports based on user-provided URLs using the Pa11y API
 
 ![A11y ](https://github.com/user-attachments/assets/c362c43e-2f29-467f-a0eb-d03d6cd1df82)
 
